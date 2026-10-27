@@ -16,24 +16,22 @@ playing often, not winning.
   notifications.
 - **Format:** doubles with **rotating partners**. Individuals are ranked, not fixed teams; matchmaking forms the pairs.
 - **Ladder rank = number of matches played** in the current season. There is no score submission and no win/loss
-  record. Ladders **reset each season**.
+  record. Ladders **reset each season**. An admin sets each season's start and end dates.
 - **A match counts automatically** once its time slot passes, unless it was cancelled first. Nobody confirms it.
   Members are trusted not to fake matches, so there is no anti-cheating mechanism. This was a deliberate choice; don't
   propose one again.
-- **Availability:** a user submits multiple time windows when they can play.
+- **Availability:** a user submits multiple free-form time ranges when they can play (e.g. Tue 17:30–20:00). Each range
+  is at least 1h30. A match lasts 1h30 and can start anywhere inside the overlap of all 4 players' ranges.
 - **Matchmaking:** finds 4 players from the **same ladder** whose availability overlaps, preferring players **close in
   rank**. The proposed match is booked only when **all 4 accept**. If someone declines, the next candidate is tried.
 - **Waiting:** if no match exists yet, the user's availability stays open. When a match becomes possible (e.g. someone
   else adds availability), they are notified by **email and in-app notification**.
 
-### Open questions
-
-Ask the user before building anything that depends on these:
-- Season length and boundaries, and the tie-break for equal match counts.
-- Match length / availability granularity (fixed blocks vs free intervals); whether court booking is in scope.
-- Cancellation rules (deadline, late-cancel consequences), and what happens to a proposal when its slot is
-  near or someone's availability changes.
-- What "close in rank" means concretely (window size, fallback when the ladder is small).
+- **Ties:** players with equal match counts share a rank (5, 5 → both 3rd).
+- **Close in rank:** prefer players within ±5 positions; fall back to anyone in the ladder if that can't form a match.
+- **Cancellation:** any participant can cancel a booked match before it starts. The other 3 are notified that the match
+  is cancelled and their times are available again. Their availability returns to the pool and matchmaking reruns.
+- **Out of scope:** court booking. The app only brings players together.
 
 ## Starting point
 
