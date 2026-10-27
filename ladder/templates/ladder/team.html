@@ -1,0 +1,9 @@
+{% extends "ladder/base.html" %}
+{% block title %}Dashboard & Team | BC Ladder{% endblock %}
+{% block main_class %}dashboard-shell{% endblock %}
+{% block content %}
+<article class="dashboard-page">
+<div data-compose-url="{% url 'ladder:dashboard' %}" data-compose-fragment="dashboard-overview"><div class="compose-fallback"><a href="{% url 'ladder:dashboard' %}">Open dashboard</a><p data-compose-status role="status">Loading your dashboard…</p></div></div>
+<section id="team" class="dashboard-team-section">{% include "ladder/partials/team_content.html" %}</section>
+</article>
+{% endblock %}
